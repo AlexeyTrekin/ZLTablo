@@ -66,10 +66,10 @@ namespace ZLTablo_WPF
             timer.Tick += TimerTick;
 
             gamemodes = new Dictionary<string, Gamemode>();
-            gamemodes.Add("Рапира", new Gamemode("Рапира", 180, true, 15, 3));
-            gamemodes.Add("Меч", new Gamemode("Меч", 180, true, 8, 3));
+            gamemodes.Add("Pools", new Gamemode("Pools", 60, false, -1, -1, 3));
+            gamemodes.Add("Final", new Gamemode("Final", 120, false, -1, -1, 5));
 
-            _gamemodeChangeCmd.Execute("Рапира");
+            _gamemodeChangeCmd.Execute("Pools");
 
             sound = new SoundPlayer("Sound/timeout2.wav");
             sound.Load();
@@ -137,28 +137,33 @@ namespace ZLTablo_WPF
         }
         private void UpdateScore ()
         {
-            ScoreLeftTextBlock.Text = leftScore.ToString();
-            ScoreRightTextBlock.Text = rightScore.ToString();
+            ScoreLeftTextBlock.Text = (- leftScore).ToString();
+            ScoreRightTextBlock.Text = (- rightScore).ToString();
+
+            Left.Background = Brushes.Transparent;
+            Right.Background = Brushes.Transparent;
+
             if (currentGamemode.CountScoreGap)
             {
                 if (leftScore >= rightScore + currentGamemode.MaxScoreGap)
                 {
                     Right.Background = Brushes.Black;
                 }
-                else if (rightScore >= leftScore + currentGamemode.MaxScoreGap)
+                if (rightScore >= leftScore + currentGamemode.MaxScoreGap)
                 {
                     Left.Background = Brushes.Black;
                 }
-                else
-                {
-                    Left.Background = Brushes.Transparent;
-                    Right.Background = Brushes.Transparent;
-                }
             }
-            else
+            if (currentGamemode.CountMaxScore)
             {
-                Left.Background = Brushes.Transparent;
-                Right.Background = Brushes.Transparent;
+                if (leftScore >= currentGamemode.MaxScore)
+                {
+                    Right.Background = Brushes.Black;
+                }
+                if (rightScore >= currentGamemode.MaxScore)
+                {
+                    Left.Background = Brushes.Black;
+                }
             }
             if (showWindow != null) showWindow.UpdateScore();
         }

@@ -24,6 +24,7 @@ namespace ZLTablo_WPF
 
         public Boolean CountScoreGap { get { return _maxScoreGap >= 0; } }
         public Boolean CountDoubleHits { get { return _maxDoubleHits >= 0; } }
+        public Boolean CountMaxScore { get { return _maxScore >= 0; } }
 
         public Int32 MaxDoubleHits { get { return _maxDoubleHits; } }
         public Int32 MaxScoreGap { get { return _maxScoreGap; } }
@@ -35,7 +36,7 @@ namespace ZLTablo_WPF
             _timeIsDirty = timeIsDirty;
             _maxScoreGap = maxScoreGap;
             _maxDoubleHits = maxDoubleHits;
-            _maxScoreGap = maxScore;
+            _maxScore = maxScore;
         }
     }
 }
