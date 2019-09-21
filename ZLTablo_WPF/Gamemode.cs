@@ -15,6 +15,7 @@ namespace ZLTablo_WPF
         List<Int16> scores;
 
         private int _maxScoreGap;
+        private int _maxScore;
         private int _maxDoubleHits;
 
         public String Name { get { return _name; } }
@@ -26,14 +27,15 @@ namespace ZLTablo_WPF
 
         public Int32 MaxDoubleHits { get { return _maxDoubleHits; } }
         public Int32 MaxScoreGap { get { return _maxScoreGap; } }
-
-        public Gamemode(String name, Int32 seconds, Boolean timeIsDirty, Int32 maxScoreGap = -1, Int32 maxDoubleHits = -1) 
+        public Int32 MaxScore { get { return _maxScore; } }
+        public Gamemode(String name, Int32 seconds, Boolean timeIsDirty, Int32 maxScoreGap = -1, Int32 maxDoubleHits = -1, Int32 maxScore = -1) 
         {
             _name = name;
             _totalTime = new TimeSpan(0, 0, seconds);
             _timeIsDirty = timeIsDirty;
             _maxScoreGap = maxScoreGap;
             _maxDoubleHits = maxDoubleHits;
+            _maxScoreGap = maxScore;
         }
     }
 }
