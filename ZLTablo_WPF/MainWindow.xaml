@@ -36,14 +36,14 @@
                     <MenuItem Header="Выход" Command="{Binding ExitCommand}"/>
                 </MenuItem>
                 <MenuItem Header="_Номинация" Name="GamemodeMenu">
-                    <MenuItem Header="Рапира" Command="{Binding GamemodeChangeCommand}">
+                    <MenuItem Header="Pools" Command="{Binding GamemodeChangeCommand}">
                         <MenuItem.CommandParameter>
-                            <sys:String>Рапира</sys:String>
+                            <sys:String>Pools</sys:String>
                         </MenuItem.CommandParameter>
                     </MenuItem>
-                    <MenuItem Header="Меч" Command="{Binding GamemodeChangeCommand}">
+                    <MenuItem Header="Final" Command="{Binding GamemodeChangeCommand}">
                         <MenuItem.CommandParameter>
-                            <sys:String>Меч</sys:String>
+                            <sys:String>Final</sys:String>
                         </MenuItem.CommandParameter>
                     </MenuItem>
 
