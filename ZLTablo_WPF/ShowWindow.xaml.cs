@@ -31,11 +31,12 @@ namespace ZLTablo_WPF
         public void UpdateScore()
         {
             MainWindow mw = ((MainWindow)Owner);
-            int leftScore = mw.LeftScore;
-            int rightScore = mw.RightScore;
-            ScoreRightTextBlock.Text = leftScore.ToString();
+            //int leftScore = mw.LeftScore;
+            //int rightScore = mw.RightScore;
+            // Score is copied as text, not as number
+            ScoreRightTextBlock.Text = mw.ScoreLeftTextBlock.Text;
             Right.Background = mw.Left.Background;
-            ScoreLeftTextBlock.Text = rightScore.ToString();
+            ScoreLeftTextBlock.Text = mw.ScoreRightTextBlock.Text;
             Left.Background = mw.Right.Background;
         }
         public void UpdateDoubleHits()

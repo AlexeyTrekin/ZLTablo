@@ -137,8 +137,9 @@ namespace ZLTablo_WPF
         }
         private void UpdateScore ()
         {
-            ScoreLeftTextBlock.Text = (- leftScore).ToString();
-            ScoreRightTextBlock.Text = (- rightScore).ToString();
+            // Score is shown negative
+            ScoreLeftTextBlock.Text = (-leftScore).ToString();
+            ScoreRightTextBlock.Text = (-rightScore).ToString();
 
             Left.Background = Brushes.Transparent;
             Right.Background = Brushes.Transparent;
