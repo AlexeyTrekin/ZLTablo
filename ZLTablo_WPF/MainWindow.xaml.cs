@@ -455,11 +455,11 @@ namespace ZLTablo_WPF
                 leftScore += 2;
                 UpdateScore();
             }
-            else if (e.Key == Key.E || e.Key == Key.F3)
-            {
-                leftScore += 3;
-                UpdateScore();
-            }
+            //else if (e.Key == Key.E || e.Key == Key.F3)
+            //{
+            //    leftScore += 3;
+            //    UpdateScore();
+            //}
             else if (e.Key == Key.Z || e.Key == Key.F4)
             {
                 if (leftScore > 0)
@@ -468,11 +468,12 @@ namespace ZLTablo_WPF
                     UpdateScore();
                 }
             }
+            /*
             else if (e.Key == Key.I || e.Key == Key.System)
             {
                 rightScore += 3;
                 UpdateScore();
-            }
+            }*/
             else if (e.Key == Key.O || e.Key == Key.F11)
             {
                 rightScore += 2;
@@ -495,6 +496,7 @@ namespace ZLTablo_WPF
             {
                 swapColor();
             }
+            
             else if (e.Key == Key.F)
             {
                 timeLeft += new TimeSpan(0, 0, 1);
@@ -507,35 +509,35 @@ namespace ZLTablo_WPF
                 matchInProgress = true;
                 UpdateTimer();
             }
-            else if (e.Key == Key.J)
-            {
-                timeLeft += new TimeSpan(0, 1, 0);
-                matchInProgress = true;
-                UpdateTimer();
-            }
+            //else if (e.Key == Key.J)
+            //{
+            //    timeLeft += new TimeSpan(0, 1, 0);
+            //    matchInProgress = true;
+            //    UpdateTimer();
+            //}
             else if (e.Key == Key.F8)
             {
                 _restartCmd.Execute(null);
             }
-            else if (e.Key == Key.F5)
-            {
-                doubleHits++;
-                UpdateDoubleHits();
-            }
-            else if (e.Key == Key.F6)
-            {
-                if (doubleHits > 0)
-                {
-                    doubleHits--;
-                    UpdateDoubleHits();
-                }
-            }
-            else if (e.Key == Key.Y || e.Key == Key.F7)
-            {
-                timeLeft = new TimeSpan(0, 1, 0);
-                matchInProgress = true;
-                UpdateTimer();
-            }
+            //else if (e.Key == Key.F5)
+            //{
+            //    doubleHits++;
+            //    UpdateDoubleHits();
+            //}
+            //else if (e.Key == Key.F6)
+            //{
+            //    if (doubleHits > 0)
+            //    {
+            //        doubleHits--;
+            //        UpdateDoubleHits();
+            //    }
+            //}
+            //else if (e.Key == Key.Y || e.Key == Key.F7)
+            //{
+            //    timeLeft = new TimeSpan(0, 1, 0);
+            //    matchInProgress = true;
+            //    UpdateTimer();
+            //}
         }
         #endregion
     }
